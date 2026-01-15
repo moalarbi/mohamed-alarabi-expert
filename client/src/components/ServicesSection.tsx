@@ -36,35 +36,35 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1F3A5F] mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1F3A5F] mb-4">
             الخدمات التي أقدمها
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             مجموعة شاملة من الخدمات والدورات المتخصصة لمساعدتك على بناء وتطوير عملك الإلكتروني.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-[#D4A574] to-[#E8A87C] mx-auto mt-6" />
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <Card
                 key={index}
-                className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white border-0"
+                className="p-5 md:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white border-0"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#D4A574] to-[#E8A87C] rounded-lg flex items-center justify-center mb-6">
-                  <Icon size={32} className="text-white" />
+                <div className="w-14 md:w-16 h-14 md:h-16 bg-gradient-to-br from-[#D4A574] to-[#E8A87C] rounded-lg flex items-center justify-center mb-4 md:mb-6">
+                  <Icon size={28} className="md:w-8 md:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-[#1F3A5F] mb-3">
+                <h3 className="text-lg md:text-xl font-bold text-[#1F3A5F] mb-2 md:mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
               </Card>

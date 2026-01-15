@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import TestimonialsCarousel from "./TestimonialsCarousel";
 
 const testimonials = [
   {
@@ -48,25 +49,30 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1F3A5F] mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1F3A5F] mb-4">
             شهادات العملاء الراضين
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             استمع إلى قصص النجاح من عملائنا الذين حققوا نتائج حقيقية.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-[#D4A574] to-[#E8A87C] mx-auto mt-6" />
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Carousel for Mobile */}
+        <div className="md:hidden">
+          <TestimonialsCarousel />
+        </div>
+
+        {/* Grid for Desktop */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="p-8 hover:shadow-xl transition-all duration-300 bg-gray-50 border-0"
+              className="p-6 lg:p-8 hover:shadow-xl transition-all duration-300 bg-gray-50 border-0"
             >
               {/* Rating */}
               <div className="flex gap-1 mb-4">
