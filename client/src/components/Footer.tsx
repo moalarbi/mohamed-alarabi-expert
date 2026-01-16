@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,12 +10,14 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
           {/* About */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[#D4A574] rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold">م</span>
-              </div>
-              <h3 className="text-base md:text-lg font-bold">محمد العربي</h3>
-            </div>
+            <Link href="/">
+              <a className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 bg-[#D4A574] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold">م</span>
+                </div>
+                <h3 className="text-base md:text-lg font-bold">محمد العربي</h3>
+              </a>
+            </Link>
             <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
               خبير متخصص في التجارة الإلكترونية والتسويق الرقمي. مساعدة رواد الأعمال على بناء متاجر إلكترونية ناجحة.
             </p>
@@ -25,9 +28,11 @@ export default function Footer() {
             <h4 className="text-base md:text-lg font-bold mb-4">الروابط السريعة</h4>
             <ul className="space-y-2 text-xs md:text-sm text-gray-400">
               <li>
-                <a href="#about" className="hover:text-[#D4A574] transition">
-                  عني
-                </a>
+                <Link href="/about">
+                  <a className="hover:text-[#D4A574] transition">
+                    عني
+                  </a>
+                </Link>
               </li>
               <li>
                 <a href="#services" className="hover:text-[#D4A574] transition">
